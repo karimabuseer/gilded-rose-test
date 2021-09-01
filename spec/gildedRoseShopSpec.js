@@ -19,7 +19,7 @@ describe("Gilded Rose", function() {
       expect(gildedRose.items[0].quality).toEqual(19);
     });
 
-    it("have their sellIn reduced by 1 when SellIn is positive int", () => {
+    it("have their sellIn reduced by 1 when sellIn is positive int", () => {
       expect(gildedRose.items[0].sellIn).toEqual(10);
       gildedRose.updateQuality();
       expect(gildedRose.items[0].sellIn).toEqual(9);
@@ -27,7 +27,18 @@ describe("Gilded Rose", function() {
   })
 
   describe('Aged Brie', () => {
+    let agedBrieDouble;
+    beforeEach(() => { 
+      agedBrieDouble = { name: 'Aged Brie', sellIn: 10, quality: 20 } ;
+      gildedRose = new Shop([agedBrieDouble]);
+      items = gildedRose.items;
+    });
 
+    it("has a quality that increases whilst sellIn is a positive int", () => { 
+      expect(items[0].quality).toEqual(20);
+      gildedRose.updateQuality();
+      expect(items[0].quality).toEqual(21);
+    })
   });
 
   describe('Legendary items', () => {
