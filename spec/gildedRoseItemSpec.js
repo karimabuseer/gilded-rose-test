@@ -9,4 +9,8 @@ describe("Item", function() {
   it("should know its sellIn", function() {
     expect((testItem).sellIn).toEqual(20);
   });
+
+  it("should know its quality", function() {
+    expect((testItem).sellIn).toEqual(10);
+  });
 });
