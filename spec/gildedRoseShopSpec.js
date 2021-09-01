@@ -11,5 +11,4 @@ describe("Gilded Rose", function() {
     const items = gildedRose.updateQuality();
     expect(items[0].name).toEqual("manaPotion");
   });
-
 });
