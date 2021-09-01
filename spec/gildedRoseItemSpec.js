@@ -11,6 +11,6 @@ describe("Item", function() {
   });
 
   it("should know its quality", function() {
-    expect((testItem).sellIn).toEqual(10);
+    expect((testItem).quality).toEqual(10);
   });
 });
