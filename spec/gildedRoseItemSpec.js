@@ -5,4 +5,8 @@ describe("Item", function() {
   it("should know its name", function() {
     expect((testItem).name).toEqual("swordOfSundering");
   });
+
+  it("should know its sellIn", function() {
+    expect((testItem).sellIn).toEqual(20);
+  });
 });
