@@ -29,15 +29,23 @@ describe("Gilded Rose", function() {
   describe('Aged Brie', () => {
     let agedBrieDouble;
     beforeEach(() => { 
-      agedBrieDouble = { name: 'Aged Brie', sellIn: 10, quality: 20 } ;
+      agedBrieDouble = { name: 'Aged Brie', sellIn: 10, quality: 48 } ;
       gildedRose = new Shop([agedBrieDouble]);
       items = gildedRose.items;
     });
 
     it("has a quality that increases whilst sellIn is a positive int", () => { 
-      expect(items[0].quality).toEqual(20);
+      expect(items[0].quality).toEqual(48);
       gildedRose.updateQuality();
-      expect(items[0].quality).toEqual(21);
+      expect(items[0].quality).toEqual(49);
+    })
+
+    it("does not have its quality increased above 50", () => {
+      gildedRose.updateQuality();
+      gildedRose.updateQuality();
+      expect(items[0].quality).toEqual(50);
+      gildedRose.updateQuality();
+      expect(items[0].quality).toEqual(50);
     })
   });
 
