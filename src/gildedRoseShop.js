@@ -52,7 +52,8 @@ class Shop {
     return this.items;
   }
 }
+
+
 module.exports = {
-  Item,
-  Shop
+  Shop: Shop
 }
