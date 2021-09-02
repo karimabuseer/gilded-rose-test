@@ -88,9 +88,14 @@ describe("Gilded Rose", function() {
       expect(items[0].quality).toEqual(21);
     });
 
-    it("Quality increases in 1 when sellIn is greater than 5 but less than 10",() => {
+    it("Quality increases by 2 when sellIn is greater than 5 but less than or equal to 10",() => {
       gildedRose.updateQuality();
       expect(items[1].quality).toEqual(27);
+    });
+
+    it("Quality increases by 3 when sellIn is greater than 0 but less than or equal to 5",() => {
+      gildedRose.updateQuality();
+      expect(items[2].quality).toEqual(33);
     });
   });
    
