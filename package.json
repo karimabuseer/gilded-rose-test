@@ -24,7 +24,18 @@
     "@babel/core": "^7.14.0",
     "@babel/preset-env": "7.14.0",
     "@babel/register": "^7.13.0",
-    "jasmine": "^3.9.0"
+    "istanbul": "^0.4.5",
+    "jasmine": "^3.9.0",
+    "jasmine-console-reporter": "^3.1.0",
+    "jasmine-core": "^3.9.0",
+    "jasmine-node": "^3.0.0",
+    "jasmine-supertest": "^1.0.0",
+    "karma": "^6.3.4",
+    "karma-browserify": "^8.1.0",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-jasmine": "^4.0.1",
+    "karma-requirejs": "^1.1.0",
+    "supertest": "^6.1.6"
   },
   "babel": {
     "presets": [
@@ -38,5 +49,8 @@
       ]
     ],
     "plugins": []
+  },
+  "dependencies": {
+    "browserify": "^17.0.0"
   }
 }

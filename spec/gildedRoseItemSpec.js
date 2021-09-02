@@ -1,4 +1,6 @@
-Item =  require('../src/gildedRoseItem.js').Item;
+Item = require('../src/gildedRoseItem.js').Item;
+
+
 describe("Item", function() {
   const testItem = new Item('swordOfSundering', 20, 10);
   

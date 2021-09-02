@@ -1,4 +1,5 @@
-Shop =  require('../src/gildedRoseShop.js').Shop;
+Shop = require('../src/gildedRoseShop.js').Shop;
+
 describe("Gilded Rose", function() {
   let manaPotionDouble; 
   let gildedRose;
@@ -74,6 +75,4 @@ describe("Gilded Rose", function() {
   describe('Legendary items', () => {
     
   });
-
-  
 });
