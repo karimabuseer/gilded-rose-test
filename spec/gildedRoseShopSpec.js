@@ -48,12 +48,26 @@ describe("Gilded Rose", function() {
       expect(items[0].quality).toEqual(50);
     })
   });
+  
+  describe('Legendary Items', () => {
+    let sulfuras;
+    beforeEach(() => { 
+      sulfuras = { name: 'Sulfuras, Hand of Ragnaros', sellIn: 0, quality: 50 } ;
+      gildedRose = new Shop([sulfuras]);
+      items = gildedRose.items;
+    });
+
+    it("sellIn never changes", () => {
+      expect(items[0].sellIn).toEqual(0)
+      gildedRose.updateQuality();
+      expect(items[0].sellIn).toEqual(0)
+    })
+    
+  });
 
   describe('Legendary items', () => {
     
   });
 
-  describe('Backstage Passes', () => {
-    
-  });
+  
 });
