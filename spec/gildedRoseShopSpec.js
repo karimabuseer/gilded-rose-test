@@ -72,7 +72,17 @@ describe("Gilded Rose", function() {
     
   });
 
-  describe('Legendary items', () => {
-    
-  });
+  describe('Backstage Passes', () => {
+    let backstagePass;
+    beforeEach(() => { 
+      backstagePass = { name: 'Backstage passes to a TAFKAL80ETC concert', sellIn: 11, quality: 30 } ;
+      gildedRose = new Shop([backstagePass]);
+      items = gildedRose.items;
+    });
+    it("Quality increases by 1 when sellIn is greater than 10",() => {
+      expect(items[0].quality).toEqual(30);
+      gildedRose.updateQuality();
+      expect(items[0].quality).toEqual(31);
+    })
+   
 });
