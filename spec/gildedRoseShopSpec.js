@@ -62,6 +62,12 @@ describe("Gilded Rose", function() {
       gildedRose.updateQuality();
       expect(items[0].sellIn).toEqual(0)
     })
+
+    it("quality never changes", () => {
+      expect(items[0].quality).toEqual(50)
+      gildedRose.updateQuality();
+      expect(items[0].quality).toEqual(50)
+    })
     
   });
 
