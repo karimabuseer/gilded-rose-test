@@ -52,7 +52,7 @@ describe("Gilded Rose", function() {
   describe('Legendary Items', () => {
     let sulfuras;
     beforeEach(() => { 
-      sulfuras = { name: 'Sulfuras, Hand of Ragnaros', sellIn: 0, quality: 50 } ;
+      sulfuras = { name: 'Sulfuras, Hand of Ragnaros', sellIn: 0, quality: 49 } ;
       gildedRose = new Shop([sulfuras]);
       items = gildedRose.items;
     });
@@ -64,9 +64,9 @@ describe("Gilded Rose", function() {
     })
 
     it("quality never changes", () => {
-      expect(items[0].quality).toEqual(50)
+      expect(items[0].quality).toEqual(49)
       gildedRose.updateQuality();
-      expect(items[0].quality).toEqual(50)
+      expect(items[0].quality).toEqual(49)
     })
     
   });
