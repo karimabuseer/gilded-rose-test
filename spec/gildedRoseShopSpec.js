@@ -74,15 +74,24 @@ describe("Gilded Rose", function() {
 
   describe('Backstage Passes', () => {
     let backstagePass;
+    let ancientBackstagePass;
+    let archaicBackstagePass;
     beforeEach(() => { 
-      backstagePass = { name: 'Backstage passes to a TAFKAL80ETC concert', sellIn: 11, quality: 30 } ;
-      gildedRose = new Shop([backstagePass]);
+      backstagePass = { name: 'Backstage passes to a TAFKAL80ETC concert', sellIn: 11, quality: 20 };
+      ancientBackstagePass = { name: 'Backstage passes to a TAFKAL80ETC concert', sellIn: 7, quality: 25 };
+      archaicBackstagePass = { name: 'Backstage passes to a TAFKAL80ETC concert', sellIn: 2, quality: 30 } ;
+      gildedRose = new Shop([backstagePass, ancientBackstagePass, archaicBackstagePass]);
       items = gildedRose.items;
     });
     it("Quality increases by 1 when sellIn is greater than 10",() => {
-      expect(items[0].quality).toEqual(30);
       gildedRose.updateQuality();
-      expect(items[0].quality).toEqual(31);
-    })
+      expect(items[0].quality).toEqual(21);
+    });
+
+    it("Quality increases in 1 when sellIn is greater than 5 but less than 10",() => {
+      gildedRose.updateQuality();
+      expect(items[1].quality).toEqual(27);
+    });
+  });
    
 });
