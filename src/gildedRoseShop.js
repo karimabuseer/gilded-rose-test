@@ -10,8 +10,8 @@ class Shop {
     this.items.forEach((item) => {
       if (item.name != 'Aged Brie' && item.name != 'Backstage passes to a TAFKAL80ETC concert') {
         if (item.quality > 0) {
-          if (item.name != 'Sulfuras, Hand of Ragnaros') {
-            this.regularLowerQualityByOne(item);
+          if (!this.isLegendary(item)) {
+            this.lowerQuality(item);
           }
         }
       } else {
@@ -29,8 +29,8 @@ class Shop {
         if (item.name != 'Aged Brie') {
           if (item.name != 'Backstage passes to a TAFKAL80ETC concert') {
             if (item.quality > 0) {
-              if (item.name != 'Sulfuras, Hand of Ragnaros') {
-                this.regularLowerQualityByOne(item)
+              if (!this.isLegendary(item)) {
+                this.lowerQuality(item)
               }
             }
           } else {
@@ -47,7 +47,7 @@ class Shop {
     return this.items;
   }
 
-  regularLowerQualityByOne (item) { 
+  lowerQuality (item) { 
     item.quality = item.quality - 1;
   }
 
@@ -79,9 +79,7 @@ class Shop {
   isLegendary(item) { 
     return item.name == 'Sulfuras, Hand of Ragnaros'
   }
-
 }
-
 
 module.exports = {
   Shop: Shop
