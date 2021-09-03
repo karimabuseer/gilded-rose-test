@@ -13,9 +13,9 @@ class Shop {
         }
       } else {
         if (item.quality < 50) {
-          item.quality = item.quality + 1;
+          this.increaseQualityByOne(item)
           if (item.name == 'Backstage passes to a TAFKAL80ETC concert') {
-           this.calculateBackstagePassChange(item);
+           this.increaseBackstagePassQuality(item);
           }
         }
       }
@@ -52,7 +52,7 @@ class Shop {
     item.quality = item.quality + 1;
   }
 
-  calculateBackstagePassChange(item) {
+  increaseBackstagePassQuality(item) {
     if (item.sellIn < 11) {
       if (item.quality < 50) {
         item.quality = item.quality + 1;
