@@ -104,5 +104,20 @@ describe("Gilded Rose", function() {
       expect(items[2].quality).toEqual(0);
     });
   });
+
+  describe("Conjured items", () => {
+    let conjuredHealthPotionDouble
+    beforeEach(() => { 
+      conjuredHealthPotionDouble = { name: 'Conjured Health Potion', sellIn: 10, quality: 10 } ;
+      gildedRose = new Shop([conjuredHealthPotionDouble]);
+      items = gildedRose.items;
+    });
+    it("Quality drops by 2 when a day passes for a conjured item and sellIn is above 0", () => {
+      expect(items[0].quality).toEqual(10)
+      gildedRose.updateQuality();
+      expect(items[0].quality).toEqual(8)
+    });
+  })
+  
    
 });

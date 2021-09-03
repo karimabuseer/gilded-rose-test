@@ -48,6 +48,9 @@ class Shop {
   }
 
   lowerQuality (item) { 
+    if (item.name.includes('Conjured')) { 
+      item.quality = item.quality - 2;
+    } else  
     item.quality = item.quality - 1;
   }
 
