@@ -31,7 +31,7 @@ class Shop {
               }
             }
           } else {
-            item.quality = item.quality - item.quality;
+            this.setItemQualityToZero(item);
           }
         } else {
           if (item.quality < 50) {
@@ -67,6 +67,10 @@ class Shop {
 
   lowerSellIn(item) {
     item.sellIn = item.sellIn - 1;
+  }
+
+  setItemQualityToZero(item) { 
+    item.quality = item.quality - item.quality;
   }
 
 }
