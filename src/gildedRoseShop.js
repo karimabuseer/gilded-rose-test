@@ -1,3 +1,6 @@
+const LEGENDARY_ITEMS = ['Sulfuras, Hand of Ragnaros']
+const RARE_ITEMS = ['Aged Brie', 'Backstage passes to a TAFKAL80ETC concert']
+
 class Shop {
   constructor(items=[]){
     this.items = items;
@@ -19,7 +22,7 @@ class Shop {
           }
         }
       }
-      if (item.name != 'Sulfuras, Hand of Ragnaros') {
+      if (!this.isLegendary(item)) {
         this.lowerSellIn(item);
       }
       if (item.sellIn < 0) {
@@ -71,6 +74,10 @@ class Shop {
 
   setItemQualityToZero(item) { 
     item.quality = item.quality - item.quality;
+  }
+
+  isLegendary(item) { 
+    return item.name == 'Sulfuras, Hand of Ragnaros'
   }
 
 }
